@@ -45,5 +45,4 @@ def process_results(doc, results):
         "word_perplexity": (loglikelihood, _words),
         "byte_perplexity": (loglikelihood, _bytes),
         "bits_per_byte": (loglikelihood, _bytes),
-        "perplexity": (loglikelihood),
     }
