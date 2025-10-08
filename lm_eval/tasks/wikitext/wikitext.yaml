@@ -14,5 +14,6 @@ metric_list:
   - metric: word_perplexity
   - metric: byte_perplexity
   - metric: bits_per_byte
+  - metric: perplexity
 metadata:
   version: 2.0
