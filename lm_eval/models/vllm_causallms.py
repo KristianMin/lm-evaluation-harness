@@ -510,7 +510,7 @@ class VLLM(TemplateLM):
                         token_list=self.tok_encode(string),
                         prefix_token=self.prefix_token_id,
                         # max_seq_len - (1 for context)
-                        max_seq_len=self.max_length - 1,
+                        max_seq_len=self.max_length - 2,
                         context_len=1,
                     ),
                 )
