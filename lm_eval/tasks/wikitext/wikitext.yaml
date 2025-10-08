@@ -17,5 +17,6 @@ metric_list:
   - metric: perplexity
     aggregation: perplexity
     higher_is_better: false
+    hf_evaluate: true
 metadata:
   version: 2.0
