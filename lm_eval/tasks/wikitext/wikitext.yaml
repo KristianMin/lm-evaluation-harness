@@ -12,6 +12,8 @@ should_decontaminate: true
 doc_to_decontamination_query: "{{page}}"
 metric_list:
   - metric: token_perplexity
+    aggregation: mean
+    higher_is_better: false
   - metric: word_perplexity
   - metric: byte_perplexity
   - metric: bits_per_byte
