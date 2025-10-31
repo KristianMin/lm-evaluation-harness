@@ -1,5 +1,5 @@
 import re
-
+from transformers import AutoTokenizer
 
 def wikitext_detokenizer(doc):
     string = doc["page"]
@@ -39,6 +39,9 @@ def wikitext_detokenizer(doc):
 def process_results(doc, results):
     (loglikelihood, ) = results
     # IMPORTANT: wikitext counts number of words in *original doc before detokenization*
+    tokenizer = AutoTokenizer.from_pretrained("facebook/opt-125m")
+    print(doc)
+    breakpoint()
     _words = len(re.split(r"\s+", doc["page"]))
     _bytes = len(doc["page"].encode("utf-8"))
     return {
