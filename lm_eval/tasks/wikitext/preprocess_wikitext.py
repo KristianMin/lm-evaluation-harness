@@ -40,11 +40,11 @@ def process_results(doc, results):
     (loglikelihood, ) = results
     # IMPORTANT: wikitext counts number of words in *original doc before detokenization*
     tokenizer = AutoTokenizer.from_pretrained("facebook/opt-125m")
-    print(doc)
-    breakpoint()
     _words = len(re.split(r"\s+", doc["page"]))
     _bytes = len(doc["page"].encode("utf-8"))
+    _tokens = len(tokenizer(doc['page'])['input_ids'])
     return {
+        "token_perplexity": (loglikelihood, _tokens),
         "word_perplexity": (loglikelihood, _words),
         "byte_perplexity": (loglikelihood, _bytes),
         "bits_per_byte": (loglikelihood, _bytes),
